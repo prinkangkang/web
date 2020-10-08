@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+</head>
+<body>
+<table  align="center">
+    <tr>
+        <td>姓名：</td>
+        <td>
+            <input type="text" id="name" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>电话：</td>
+        <td>
+            <input type="text" id="phone" value="" />
+        </td>
+    </tr>
+    <tr>
+        <td>邮箱：</td>
+        <td>
+            <input type="text" id="email" value="" />
+        </td>
+    </tr>
+    <tr>
+        <td>住址：</td>
+        <td>
+            <input type="text" id="address" value="" />
+        </td>
+    </tr>
+    <tr>
+        <td>QQ号：</td>
+        <td>
+            <input type="text" id="qq" value="" />
+        </td>
+    </tr>
+
+</table>
+<script>
+    function judge()
+    {
+        var name=document.getElementById("name").value;
+        var phone=document.getElementById("phone").value;
+        var email=document.getElementById("email").value;
+        var address=document.getElementById("address").value;
+        var qq=document.getElementById("qq").value;
+        var reg=/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+
+        if(name!=""&&phone!=""&&address!=""&&qq!=""&&reg.test(email))
+            window.location.href='directory.html';
+        else
+            alert("Error!");
+
+    }
+    </script>
+<div align="center">
+<tr>
+    <td align="center">
+        <input type="button" value="提交" onclick="judge()"/>
+    </td>
+</tr>
+</div>
+</body>
+</html>
